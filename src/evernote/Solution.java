@@ -1,10 +1,17 @@
 package evernote;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Scanner;
 
-public class Question2 
+/**
+ * This is question #2 for Evernote's code challenge.
+ * @author Ken
+ */
+
+public class Solution 
 {
 	public String termArray[];
 	public int freqArray[];
@@ -12,7 +19,7 @@ public class Question2
 	public int n;
 	public int k;
 	
-	public Question2()
+	public Solution()
 	{
 		termArray = null;
 		freqArray = null;
@@ -23,11 +30,6 @@ public class Question2
 	
 	public static void quicksort(String terms[], int freqs[], int left, int right)
 	{
-		/*for (int i = 0; i < terms.length; i++)
-		{
-			System.out.println(terms[i] + ": " + freqs[i]);
-		}
-		System.out.println();*/
 		if (left == right)
 			return;
 		
@@ -80,20 +82,19 @@ public class Question2
 		terms[second] = tempTerm;
 	}
 	
-	public static void main(String args[])
+	public static void main(String args[]) throws Exception
 	{
-		Question2 solution = new Question2();
+		Solution solution = new Solution();
 		solution.table = new Hashtable<String, Integer>();
-		Scanner in = new Scanner(System.in);
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		
 		//System.out.println("Input the number of terms to add.");
-		solution.n = in.nextInt();
-		in.nextLine();
+		solution.n = Integer.parseInt(in.readLine());
 		
 		//System.out.println("Input your terms.");
 		for (int i = 0; i < solution.n; i++)
 		{
-			String term = in.nextLine();
+			String term = in.readLine();
 			if (!solution.table.containsKey(term))
 				solution.table.put(term, 1);
 			else
@@ -116,11 +117,9 @@ public class Question2
 		
 		quicksort(solution.termArray, solution.freqArray, 0, solution.table.size() - 1);
 		//System.out.println("Input how many terms to print");
-		solution.k = in.nextInt();
+		solution.k = Integer.parseInt(in.readLine());
 		
 		for (i = solution.termArray.length - 1; i > solution.termArray.length - solution.k - 1; i--)
 			System.out.println(solution.termArray[i]);
-		
-		in.close();
 	}
 }

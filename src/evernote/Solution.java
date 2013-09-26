@@ -1,13 +1,10 @@
 package evernote;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Collection;
+import java.io.*;
 import java.util.Enumeration;
 import java.util.Hashtable;
-import java.util.Scanner;
 
 /**
- * This is question #2 for Evernote's code challenge.
+ * Question 2 solution
  * @author Ken
  */
 

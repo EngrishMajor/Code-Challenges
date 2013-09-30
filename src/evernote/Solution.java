@@ -55,10 +55,11 @@ public class Solution
 	public static int partition(String terms[], int freqs[], int left, int right, int pivotIndex)
 	{
 		int pivotValue = freqs[pivotIndex];
+		String pivotTerm = terms[pivotIndex];
 		swap(terms, freqs, pivotIndex, right);
 		int storeIndex = left;
 		for (int i = left; i < right; i++)
-			if (freqs[i] < pivotValue || (freqs[i] < pivotValue && terms[i].compareTo(terms[pivotValue]) < 0))
+			if (freqs[i] < pivotValue || (freqs[i] == pivotValue && terms[i].compareTo(pivotTerm) > 0))
 			{
 				swap(terms, freqs, i, storeIndex);
 				storeIndex++;

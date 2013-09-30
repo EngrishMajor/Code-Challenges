@@ -58,7 +58,7 @@ public class Solution
 		swap(terms, freqs, pivotIndex, right);
 		int storeIndex = left;
 		for (int i = left; i < right; i++)
-			if (freqs[i] < pivotValue && terms[i].compareTo(terms[pivotValue]) < 0)
+			if (freqs[i] < pivotValue || (freqs[i] < pivotValue && terms[i].compareTo(terms[pivotValue]) < 0))
 			{
 				swap(terms, freqs, i, storeIndex);
 				storeIndex++;

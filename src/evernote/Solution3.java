@@ -2,17 +2,17 @@ package evernote;
 
 import java.io.*;
 
-public class Solution {
+public class Solution3 {
 	int n; //number of elements in the array
 	int inputArray[]; //array of inputs
 	
-	public Solution() {
+	public Solution3() {
 		n = 0;
 		inputArray = null;
 	}
 	
 	public static void main(String args[]) throws Exception {
-		Solution solution = new Solution();
+		Solution3 solution = new Solution3();
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		solution.n = Integer.parseInt(in.readLine());
 		solution.inputArray = new int[solution.n];

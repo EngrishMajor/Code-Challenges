@@ -7,6 +7,7 @@ Data structures progress:
 -Linked List complete
 
 Coding challenges progress:
+
 -Star Delete complete
 -Evernote Code Challenge Question #2 complete
 -Evernote Code Challenge Question #3 complete

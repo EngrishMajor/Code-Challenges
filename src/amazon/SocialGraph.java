@@ -1,8 +1,5 @@
 package amazon;
-import java.util.Hashtable;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /*
 Setup:
@@ -28,34 +25,31 @@ public class SocialGraph {
 	}
 	
 	public Queue<Member> queue = new LinkedList<Member>();
-	public Hashtable<Member, Boolean> exists = new Hashtable<Member, Boolean>();
+	public ArrayList<Member> exists = new ArrayList<Member>();
 	
 	public void printSocialGraph(Member m) {
 		queue.add(m);
-		exists.put(m, true);
-		fillQueue(m); //fill the queue with friends in order of level
+		exists.add(m);
 		
-		while (queue.size() > 0) {//print out their info
+		/*
+		 * Do a breadth-first search starting from member m.
+		 * A breadth-first seach will do a by-level traversal.
+		 * We dequeue whoever is on top, print his/her info, then
+		 * enqueue that member's friends. If the friend has already
+		 * been put into the queue, then don't enqueue them.
+		 */
+		
+		while (queue.size() > 0) {
 			Member friend = queue.poll();
 			System.out.println("Name: " + friend.name + "    Email: " + friend.email);
-		}
-	}
-	
-	public void fillQueue(Member m) {
-		if (m.friends.size() == 0) //if the member has no friends, then there's nothing to enqueue
-			return;
-		
-		//enqueue all the friends that aren't in the queue yet
-		for (int i = 0; i < m.friends.size(); i++) {
-			Member friend = m.friends.get(i);
-			if (!exists.containsKey(friend)) {
-				queue.add(friend);
-				exists.put(friend, true);
+			
+			for (int i = 0; i < m.friends.size(); i++) {
+				Member member = m.friends.get(i);
+				if (!exists.contains(member)) {
+					queue.add(member);
+					exists.add(member);
+				}
 			}
 		}
-		
-		//go through those friend's lists
-		for (int i = 0; i < m.friends.size(); i++)
-			printSocialGraph(m.friends.get(i));
 	}
 }

@@ -11,3 +11,4 @@ Coding challenges progress:
 - Evernote Code Challenge Question #2 complete.
 - Evernote Code Challenge Question #3 complete.
 - Amazon Interview Question 2 complete.
+- Amazon Interview Question 3 complete.

@@ -8,7 +8,7 @@ Data structures progress:
 
 Coding challenges progress:
 - Star Delete complete.
-- Evernote Code Challenge Question #2 complete.
-- Evernote Code Challenge Question #3 complete.
-- Amazon Interview Question 2 complete.
-- Amazon Interview Question 3 complete.
+- Word Freq complete.
+- Product Array complete.
+- Social Graph complete.
+- Atoi complete.

@@ -1,4 +1,4 @@
-package amazon;
+package intermediate;
 import java.util.*;
 
 /*

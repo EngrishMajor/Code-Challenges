@@ -1,4 +1,4 @@
-package amazon;
+package easy;
 
 //Write a function that converts an int into its alpha-numeric equivalent represented as a null terminated string.
 //The function should accept an int as input and return a string as output. 

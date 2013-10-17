@@ -1,14 +1,40 @@
-package evernote;
+package intermediate;
 import java.io.*;
-import java.util.Enumeration;
-import java.util.Hashtable;
+import java.util.*;
 
-/**
- * Question 2 solution
- * @author Ken
- */
+//Frequency Counting of Words / Top N words in a document.
+//Given N terms, your task is to find the k most frequent terms from given N terms.
+//Input format
+//First line of input contains N, denoting the number of terms to add.
+//In each of the next N lines, each contains a term.
+//Next line contains k, most frequent terms.
+//Output format
+//Print the k most frequent terms in descending order of their frequency. If two terms have same frequency print them in lexicographical order.
+//
+//Sample input
+//14
+//Fee
+//Fi
+//Fo
+//Fum
+//Fee
+//Fo
+//Fee
+//Fee
+//Fo
+//Fi
+//Fi
+//Fo
+//Fum
+//Fee
+//3
+//
+//Sample output
+//Fee
+//Fo
+//Fi
 
-public class Solution2 
+public class WordFreq 
 {
 	public String termArray[];
 	public int freqArray[];
@@ -16,7 +42,7 @@ public class Solution2
 	public int n;
 	public int k;
 	
-	public Solution2()
+	public WordFreq()
 	{
 		termArray = null;
 		freqArray = null;
@@ -82,7 +108,7 @@ public class Solution2
 	
 	public static void main(String args[]) throws Exception
 	{
-		Solution2 solution = new Solution2();
+		WordFreq solution = new WordFreq();
 		solution.table = new Hashtable<String, Integer>();
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		
